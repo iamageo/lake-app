@@ -21,7 +21,7 @@
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/img_title_home" />
 
     <Button
         android:id="@+id/register_btn"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_btn" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_title_home"
         android:layout_width="316dp"
         android:layout_height="198dp"
         android:layout_marginTop="170dp"

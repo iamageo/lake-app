@@ -4,7 +4,15 @@
 
     <string name="login_btn">Login</string>
     <string name="register_btn">Register</string>
+
+    <!-- login text  -->
     <string name="img_home">community image</string>
+    <string name="title_login">title image login</string>
+    <string name="input_email_login">Enter your email..</string>
+    <string name="input_passwd_login">Enter your password..</string>
+
+
+
 
 
 </resources>
