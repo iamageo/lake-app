@@ -9,9 +9,13 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="252sp"
+        android:layout_width="0dp"
         android:layout_height="37dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="37dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
         android:background="@drawable/login_btn"
         android:text="@string/login_btn"
         app:backgroundTint="@color/primary"
@@ -20,10 +24,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="252dp"
+        android:id="@+id/register_btn"
+        android:layout_width="0dp"
         android:layout_height="37dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
         android:background="@drawable/register_btn"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +42,7 @@
         android:id="@+id/imageView"
         android:layout_width="316dp"
         android:layout_height="198dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="170dp"
         android:contentDescription="@string/img_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
