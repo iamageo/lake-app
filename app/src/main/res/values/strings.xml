@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">lake-app</string>
+    <string name="title_activity_lake_login">lake_login</string>
+
+    <string name="login_btn">Login</string>
+    <string name="register_btn">Register</string>
+    <string name="img_home">community image</string>
+
+
 </resources>
