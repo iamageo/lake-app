@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "32404601975",
+    "project_id": "lake-app-785f6",
+    "storage_bucket": "lake-app-785f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32404601975:android:1b75ee2508452c7ea59a72",
+        "android_client_info": {
+          "package_name": "com.iamageo.lake_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32404601975-nj217vsjrp9tqffm6r3su3dctl2er097.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJOoupqeAUm2SgXCi6liHYGHbIxP0w3_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32404601975-nj217vsjrp9tqffm6r3su3dctl2er097.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
