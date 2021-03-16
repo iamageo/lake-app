@@ -10,6 +10,9 @@
     <string name="title_login">title image login</string>
     <string name="input_email_login">Enter your email..</string>
     <string name="input_passwd_login">Enter your password..</string>
+    <string name="forgot_passwd">Forgot Password?</string>
+    <string name="line_have_account">Line for split contents</string>
+    <string name="have_account">Don\'t have an account? Sign up</string>
 
 
 

@@ -3,6 +3,7 @@ package com.iamageo.lake_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -10,6 +11,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lake_login);
+
+
+        getSupportActionBar().setTitle("back to home");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Objects.requireNonNull(getSupportActionBar()).setTitle("Calculo composto");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }
