@@ -40,11 +40,12 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="12dp"
             android:hint="@string/register_fname"
             android:inputType="textPersonName|text"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary"
+            android:drawableStart="@drawable/ic_baseline_person_24" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,10 +68,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="12dp"
             android:hint="@string/register_lname"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary"
+            android:drawableStart="@drawable/ic_baseline_person_24" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,10 +94,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_passwd_login"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary"
+            android:drawableStart="@drawable/ic_baseline_lock_24" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,10 +120,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_email_login"
-            android:textColor="@color/primary" />
+            android:textColor="@color/primary"
+            android:drawableStart="@drawable/ic_baseline_email_24" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,6 +136,7 @@
         android:background="@drawable/register_btn_one"
         android:text="@string/register_btn_account"
         app:backgroundTint="@color/primary"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
@@ -146,6 +151,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
         android:gravity="center_horizontal|center_vertical"
+        android:padding="10dp"
         android:text="@string/contract_text"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
