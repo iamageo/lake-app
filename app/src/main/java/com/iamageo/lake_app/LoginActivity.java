@@ -13,7 +13,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lake_login);
 
 
-        getSupportActionBar().setTitle("back to home");
+        getSupportActionBar().setTitle("back");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Objects.requireNonNull(getSupportActionBar()).setTitle("Calculo composto");
