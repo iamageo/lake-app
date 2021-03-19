@@ -37,15 +37,16 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_name"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:drawablePadding="12dp"
             android:hint="@string/register_fname"
             android:inputType="textPersonName|text"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_person_24" />
+            android:textColor="@color/primary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,14 +66,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_person_24"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="12dp"
-            android:hint="@string/register_lname"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_person_24" />
+            android:hint="@string/input_email_login"
+            android:textColor="@color/primary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,14 +93,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_pass"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_passwd_login"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_lock_24" />
+            android:textColor="@color/primary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,19 +120,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/register_cf_pass"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
-            android:hint="@string/input_email_login"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_email_24" />
+            android:hint="@string/register_confirm_password"
+            android:textColor="@color/primary" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/login_btn_screen2"
+        android:id="@+id/register_btn_screen2"
         android:layout_width="271dp"
         android:layout_height="37dp"
         android:layout_marginTop="47dp"
@@ -156,6 +160,6 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn_screen2" />
+        app:layout_constraintTop_toBottomOf="@+id/register_btn_screen2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

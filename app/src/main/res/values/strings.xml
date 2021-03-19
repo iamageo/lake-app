@@ -16,8 +16,8 @@
 
     <!-- register text  -->
     <string name="img_register">title register image</string>
-    <string name="register_fname">First name</string>
-    <string name="register_lname">Last name</string>
+    <string name="register_fname">First name..</string>
+    <string name="register_confirm_password">Confirm password..</string>
     <string name="register_btn_account">Register</string>
     <string name="contract_text">By signing up you agree to our Terms of  Use and Privacy Policy</string>
 

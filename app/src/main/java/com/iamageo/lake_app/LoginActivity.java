@@ -15,6 +15,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -86,7 +89,6 @@ public class LoginActivity extends AppCompatActivity {
     public void initComponents() {
         textView_fg_pass = findViewById(R.id.textView_fg_pass);
         textView_have_account = findViewById(R.id.textView_have_account);
-
     }
 
     /* cycle of activity */
