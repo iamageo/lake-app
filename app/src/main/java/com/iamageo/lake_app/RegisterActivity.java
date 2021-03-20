@@ -75,7 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-
     /* functions for inicialize components with findbyviewid */
     public void initComponents() {
         btn_register = findViewById(R.id.register_btn_screen2);
@@ -126,7 +125,6 @@ public class RegisterActivity extends AppCompatActivity {
         contract_textview.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
-
     private void attemptRegistration() {
         // Reset errors displayed in the form.
         email.setError(null);
@@ -168,7 +166,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
     }
-
 
     /* verify email is valid method */
     private boolean isEmailValid(String email) {

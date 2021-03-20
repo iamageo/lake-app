@@ -22,21 +22,13 @@
     <string name="contract_text">By signing up you agree to our Terms of  Use and Privacy Policy</string>
 
 
-
     <!-- error strings -->
     <string name="error_invalid_password">The passowrds does not match</string>
     <string name="error_field_required">O campo é obrigatório</string>
     <string name="error_invalid_email">Email is invalid</string>
     <string name="dialog">Ok</string>
     <string name="loading">Loading data..</string>
-
-
-
-
-
-
-
-
+    <string name="loading_login">Login in progress..</string>
 
 
 </resources>

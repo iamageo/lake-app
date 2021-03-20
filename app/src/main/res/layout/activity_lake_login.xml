@@ -86,14 +86,15 @@
         app:layout_constraintTop_toBottomOf="@+id/img_title_login">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_email_login"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_email_24" />
+            android:textColor="@color/primary" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -111,14 +112,15 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_passwd_login"
-            android:textColor="@color/primary"
-            android:drawableStart="@drawable/ic_baseline_lock_24" />
+            android:textColor="@color/primary" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

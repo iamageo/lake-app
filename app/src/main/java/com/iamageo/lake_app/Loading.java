@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
 
+
 public class Loading {
 
     private Activity activity;
@@ -25,6 +26,16 @@ public class Loading {
 
     void dismissDialog() {
         alertDialog.dismiss();
+    }
+
+    void loadingDialogLogin (){
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        LayoutInflater layoutInflater = activity.getLayoutInflater();
+        builder.setView(layoutInflater.inflate(R.layout.custom_dialog_login, null));
+        builder.setCancelable(false);
+
+        alertDialog = builder.create();
+        alertDialog.show();
     }
 
 }
