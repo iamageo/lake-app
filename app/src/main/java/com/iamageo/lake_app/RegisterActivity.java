@@ -5,6 +5,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -30,6 +32,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    // Constants
+    public static final String CHAT_PREFS = "ChatPrefs";
+    public static final String DISPLAY_NAME_KEY = "username";
 
     /* button */
     private Button btn_register;
@@ -179,24 +185,31 @@ public class RegisterActivity extends AppCompatActivity {
     private void createFirebaseUser () {
         String firebase_email = email.getText().toString();
         String firebase_password = password.getText().toString();
-        mFirebaseAuth.createUserWithEmailAndPassword(firebase_email, firebase_password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+        mFirebaseAuth.createUserWithEmailAndPassword(firebase_email, firebase_password).addOnCompleteListener(this, task -> {
 
-                Log.d("Lake", "createUserOnComplete: " + task.isSuccessful());
+            Log.d("Lake", "createUserOnComplete: " + task.isSuccessful());
+            loadingDialog.dismissDialog();
+
+            if(!task.isSuccessful()) {
                 loadingDialog.dismissDialog();
-
-                if(!task.isSuccessful()) {
-                    loadingDialog.dismissDialog();
-                    ShowErrorDialog("Failed to insert new user, try again");
-                    Log.d("Lake", "createUserOnComplete failed");
-                }
+                ShowErrorDialog("Failed to insert new user, try again");
+                Log.d("Lake", "createUserOnComplete failed");
+            } else {
+                saveDisplayName();
+                Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
+                finish();
+                startActivity(i);
             }
         });
 
     }
 
     //TODO: Save the display name to shared Preferences
+    private void saveDisplayName() {
+        String displayName = first_name.getText().toString();
+        SharedPreferences prefs = getSharedPreferences(CHAT_PREFS, 0);
+        prefs.edit().putString(DISPLAY_NAME_KEY, displayName).apply();
+    }
 
 
     //TODO: Create error alert using alert dialog
@@ -208,17 +221,6 @@ public class RegisterActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.dialog, null)
                 .show();
     }
-
-
-
-
-
-
-
-
-
-
-
 
     /* cycle of activity */
     @Override
