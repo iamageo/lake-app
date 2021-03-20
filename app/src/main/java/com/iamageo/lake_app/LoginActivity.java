@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         initComponents();
 
         /* active action bar */
-        Objects.requireNonNull(getSupportActionBar()).setTitle("back");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         /* configs for spannable */

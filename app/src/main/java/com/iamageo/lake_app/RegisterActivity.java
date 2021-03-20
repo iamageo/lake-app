@@ -1,6 +1,7 @@
 package com.iamageo.lake_app;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -15,6 +16,7 @@ import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,9 @@ import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    /* button */
+    private Button btn_register;
+
     /* variables input */
     private TextView contract_textview;
     private TextInputEditText  first_name;
@@ -39,6 +44,8 @@ public class RegisterActivity extends AppCompatActivity {
     /* firebase instacevariables */
     private FirebaseAuth mFirebaseAuth;
 
+    final Loading loadingDialog = new Loading(RegisterActivity.this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lake_register);
 
         /* active action bar */
-        Objects.requireNonNull(getSupportActionBar()).setTitle("back");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initComponents();
@@ -55,10 +62,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-
-
-        /* other methods here */
-
+        btn_register.setOnClickListener(v ->
+                attemptRegistration()
+        );
 
 
     }
@@ -66,11 +72,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     /* functions for inicialize components with findbyviewid */
     public void initComponents() {
+        btn_register = findViewById(R.id.register_btn_screen2);
+
         contract_textview = findViewById(R.id.contract_textview);
         first_name = findViewById(R.id.register_name);
-        email = findViewById(R.id.register_name);
-        password = findViewById(R.id.register_name);
-        cf_password = findViewById(R.id.register_name);
+        email = findViewById(R.id.register_email);
+        password = findViewById(R.id.register_pass);
+        cf_password = findViewById(R.id.register_cf_pass);
+
     }
 
     public void spannableText() {
@@ -114,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void attemptRegistration() {
         // Reset errors displayed in the form.
-        first_name.setError(null);
+        email.setError(null);
         password.setError(null);
 
         // Store values at the time of the login attempt.
@@ -125,20 +134,20 @@ public class RegisterActivity extends AppCompatActivity {
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(password) || !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password1) || !isPasswordValid(password1)) {
             password.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
+            focusView = password;
             cancel = true;
         }
 
         // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            email1.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
+        if (TextUtils.isEmpty(email1)) {
+            email.setError(getString(R.string.error_field_required));
+            focusView = email;
             cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
+        } else if (!isEmailValid(email1)) {
+            email.setError(getString(R.string.error_invalid_email));
+            focusView = email;
             cancel = true;
         }
 
@@ -148,9 +157,12 @@ public class RegisterActivity extends AppCompatActivity {
             focusView.requestFocus();
         } else {
             // TODO: Call create FirebaseUser() here
+            createFirebaseUser();
+            loadingDialog.loadingDialog();
 
         }
     }
+
 
     /* verify email is valid method */
     private boolean isEmailValid(String email) {
@@ -163,8 +175,6 @@ public class RegisterActivity extends AppCompatActivity {
         return confirmPassword.equals(password) && password.length() > 5;
     }
 
-
-
     //TODO: Create firebase user
     private void createFirebaseUser () {
         String firebase_email = email.getText().toString();
@@ -172,14 +182,31 @@ public class RegisterActivity extends AppCompatActivity {
         mFirebaseAuth.createUserWithEmailAndPassword(firebase_email, firebase_password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.d("Lake", "createUserOnComplete" + task.isSuccessful());
+
+                Log.d("Lake", "createUserOnComplete: " + task.isSuccessful());
+                loadingDialog.dismissDialog();
 
                 if(!task.isSuccessful()) {
+                    loadingDialog.dismissDialog();
+                    ShowErrorDialog("Failed to insert new user, try again");
                     Log.d("Lake", "createUserOnComplete failed");
                 }
             }
         });
 
+    }
+
+    //TODO: Save the display name to shared Preferences
+
+
+    //TODO: Create error alert using alert dialog
+    private void ShowErrorDialog (String message) {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Oops")
+                .setMessage(message)
+                .setPositiveButton(R.string.dialog, null)
+                .show();
     }
 
 

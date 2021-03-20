@@ -23,6 +23,16 @@
 
 
 
+    <!-- error strings -->
+    <string name="error_invalid_password">The passowrds does not match</string>
+    <string name="error_field_required">O campo é obrigatório</string>
+    <string name="error_invalid_email">Email is invalid</string>
+    <string name="dialog">Ok</string>
+    <string name="loading">Loading data..</string>
+
+
+
+
 
 
 
