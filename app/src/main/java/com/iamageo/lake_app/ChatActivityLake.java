@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.iamageo.lake_app.adapters.ChatListAdapter;
 
 import java.util.Objects;
 
@@ -22,10 +23,12 @@ public class ChatActivityLake extends AppCompatActivity {
     private String mDisplayName;
     private ImageButton mSendButton;
     private EditText mInputText;
-    //private ListView mChatListView;
+    private ListView mChatListView;
 
     /* firebase */
     private DatabaseReference mDatabaseReference;
+    private ChatListAdapter mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class ChatActivityLake extends AppCompatActivity {
     public void initComponents() {
         mSendButton = findViewById(R.id.sendButton);
         mInputText = findViewById(R.id.messageInput);
-        //mChatListView = findViewById(R.id.chat_list_view);
+        mChatListView = findViewById(R.id.chat_list_view);
     }
 
     //TODO: Retrieve the name from the shared preferences
@@ -77,6 +80,22 @@ public class ChatActivityLake extends AppCompatActivity {
             mDatabaseReference.child("messages").push().setValue(chat);
             mInputText.setText("");
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mAdapter = new ChatListAdapter(this, mDatabaseReference, mDisplayName);
+        mChatListView.setAdapter(mAdapter);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        mAdapter.cheanup();
 
     }
 }
