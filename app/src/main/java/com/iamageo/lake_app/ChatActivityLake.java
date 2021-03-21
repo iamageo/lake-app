@@ -58,7 +58,7 @@ public class ChatActivityLake extends AppCompatActivity {
     public void initComponents() {
         mSendButton = findViewById(R.id.sendButton);
         mInputText = findViewById(R.id.messageInput);
-        mChatListView = findViewById(R.id.chat_list_view);
+        //mChatListView = findViewById(R.id.chat_list_view);
     }
 
     //TODO: Retrieve the name from the shared preferences
