@@ -30,5 +30,9 @@
     <string name="loading">Loading data..</string>
     <string name="loading_login">Login in progress..</string>
 
+    <!-- main chat -->
+    <string name="prompt_msg">Type a message..</string>
+    <string name="action_send">Send</string>
+
 
 </resources>
