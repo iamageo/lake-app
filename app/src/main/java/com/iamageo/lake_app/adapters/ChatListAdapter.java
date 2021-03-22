@@ -1,8 +1,11 @@
 package com.iamageo.lake_app.adapters;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,6 +110,9 @@ public class ChatListAdapter extends BaseAdapter {
         final InstantMessage message = getItem(position);
         final ViewHolder holder = (ViewHolder) convertView.getTag();
 
+        boolean isMe = message.getAuthor().equals(mDisplayName);
+        setChatRowAppearence(isMe, holder);
+
         String author = message.getAuthor();
         holder.authorName.setText(author);
 
@@ -116,6 +122,25 @@ public class ChatListAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+    @SuppressLint("ResourceType")
+    private void setChatRowAppearence(boolean isItMe, ViewHolder viewHolder) {
+
+        if (isItMe) {
+            viewHolder.params.gravity = Gravity.END;
+            viewHolder.authorName.setText(R.color.primary);
+            viewHolder.body.setBackgroundResource(R.drawable.bubble2);
+        } else {
+            viewHolder.params.gravity = Gravity.START;
+            viewHolder.authorName.setText(R.color.white);
+            viewHolder.body.setBackgroundResource(R.drawable.bubble1);
+        }
+
+        viewHolder.authorName.setLayoutParams(viewHolder.params);
+        viewHolder.body.setLayoutParams(viewHolder.params);
+
+    }
+
 
     public void cheanup() {
         mDatabaseReference.removeEventListener(mListener);
