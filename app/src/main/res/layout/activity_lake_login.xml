@@ -54,7 +54,7 @@
         android:id="@+id/imageView"
         android:layout_width="289dp"
         android:layout_height="31dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="@string/line_have_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,6 +120,7 @@
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
             android:hint="@string/input_passwd_login"
+            android:inputType="textPassword"
             android:textColor="@color/primary" />
     </com.google.android.material.textfield.TextInputLayout>
 
